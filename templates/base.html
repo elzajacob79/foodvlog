@@ -90,8 +90,14 @@
       <nav id="mainav" class="fl_right">
         <ul class="clear">
           <li class="active"><a href="index.html">HOME</a></li>
-          <li><a class="active" href="#">LOGIN</a></li>
-          <li><a class="active" href="#">LOGOUT</a></li>
+                  {% if user.is_authenticated %}
+									<li>HAI {{user.username}}</li>
+									<li><a href="accounts/logout">logout</a></li>
+									{% else %}
+									<li><a href="contact.html">Contact</a></li>
+									<li><a href="accounts/register">Register</li>
+									<li><a href="accounts/login">login</a></li>
+									{% endif %}
           <li><a class="active" href="#">SEARCH</a></li>
 
 
